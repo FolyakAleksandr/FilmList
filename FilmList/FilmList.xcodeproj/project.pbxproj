@@ -15,6 +15,7 @@
 		017D445B2C50B48B00679150 /* ListFilmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D445A2C50B48B00679150 /* ListFilmsView.swift */; };
 		017D445F2C50B98B00679150 /* FilmInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D445E2C50B98B00679150 /* FilmInfoCell.swift */; };
 		017D44622C50C61000679150 /* UIView + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44612C50C61000679150 /* UIView + UI.swift */; };
+		017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44632C50F0AC00679150 /* UIColor + hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		017D445A2C50B48B00679150 /* ListFilmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmsView.swift; sourceTree = "<group>"; };
 		017D445E2C50B98B00679150 /* FilmInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfoCell.swift; sourceTree = "<group>"; };
 		017D44612C50C61000679150 /* UIView + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + UI.swift"; sourceTree = "<group>"; };
+		017D44632C50F0AC00679150 /* UIColor + hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				017D44612C50C61000679150 /* UIView + UI.swift */,
+				017D44632C50F0AC00679150 /* UIColor + hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				0174C2BF2C50A78700BA73E6 /* FilmList.xcdatamodeld in Sources */,
 				0174C2B52C50A78700BA73E6 /* AppDelegate.swift in Sources */,
 				0174C2B72C50A78700BA73E6 /* SceneDelegate.swift in Sources */,
+				017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */,
 				017D44622C50C61000679150 /* UIView + UI.swift in Sources */,
 				017D445F2C50B98B00679150 /* FilmInfoCell.swift in Sources */,
 			);

@@ -9,6 +9,7 @@ final class ListFilmsView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(hex: "#EFEFEF")
         setupUI()
     }
 
@@ -35,6 +36,8 @@ final class ListFilmsView: UIViewController {
         filmsTableView.dataSource = self
         filmsTableView.showsVerticalScrollIndicator = false
         filmsTableView.separatorStyle = .none
+        filmsTableView.backgroundColor = UIColor(hex: "#EFEFEF")
+        filmsTableView.register(FilmInfoCell.self, forCellReuseIdentifier: "FilmInfoCell")
     }
 }
 
@@ -46,6 +49,10 @@ extension ListFilmsView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmInfoCell", for: indexPath) as? FilmInfoCell else { return UITableViewCell() }
+        cell.configureFilmInfoCell(UIImage(), "", "")
+        cell.backgroundColor = UIColor(hex: "#EFEFEF")
+        cell.selectionStyle = .none
+        return cell
     }
 }
