@@ -18,12 +18,22 @@ final class ListFilmsView: UIViewController {
         configureBindings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        configureNavigationBar()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+
     // MARK: - setup UI
 
     private func setupUI() {
         layoutFilmsTableView()
         setupFilmsTableView()
-        setupNavigationController()
     }
 
     private func layoutFilmsTableView() {
@@ -46,9 +56,15 @@ final class ListFilmsView: UIViewController {
         filmsTableView.register(FilmInfoCell.self, forCellReuseIdentifier: "FilmInfoCell")
     }
 
-    private func setupNavigationController() {
-        navigationController?.navigationBar.setCustomAppearance(title: "My Movie List", titleColor: .black, backgroundColor: UIColor(hex: "#EFEFEF") ?? .lightGray)
-        navigationController?.navigationBar.addPlusButton(target: self, action: #selector(addButtonTapped))
+    private func configureNavigationBar() {
+        navigationController?.setCustomAppearance(
+            largeText: true,
+            titleColor: .black,
+            backgroundColor: UIColor(hex: "#EFEFEF"))
+
+        navigationItem.title = "My Movie List"
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.addPlusButton(target: self, action: #selector(addButtonTapped))
     }
 
     @objc private func addButtonTapped() {

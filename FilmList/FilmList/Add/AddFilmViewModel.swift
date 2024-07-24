@@ -1,3 +1,13 @@
-protocol AddFilmViewModel: AnyObject {}
+protocol AddFilmViewModel: AnyObject {
+    func saveButtonTapped()
 
-final class DefaultAddFilmViewModel: AddFilmViewModel {}
+    var navigationToListFilmView: (() -> ())? { get set }
+}
+
+final class DefaultAddFilmViewModel: AddFilmViewModel {
+    var navigationToListFilmView: (() -> ())?
+
+    func saveButtonTapped() {
+        navigationToListFilmView?()
+    }
+}
