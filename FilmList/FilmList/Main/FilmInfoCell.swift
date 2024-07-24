@@ -110,8 +110,9 @@ final class FilmInfoCell: UITableViewCell {
         ratingFilmLabel.numberOfLines = 1
     }
     
-    private func configureAttributedString(text: String) {
-        let location = text.count - 3
+    private func configureAttributedString(text: String?) {
+        guard let text else { return }
+        let location = text.count / 2
         let lengthLast = text.count - location
         let length = text.count
     

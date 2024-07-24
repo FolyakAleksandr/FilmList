@@ -1,6 +1,10 @@
 import UIKit
 
 final class ListFilmsView: UIViewController {
+    // MARK: - variable
+
+    var viewModel: ListFilmsViewModel?
+
     // MARK: - private properties
 
     private let filmsTableView = UITableView()
@@ -18,6 +22,7 @@ final class ListFilmsView: UIViewController {
     private func setupUI() {
         layoutFilmsTableView()
         setupFilmsTableView()
+        setupNavigationController()
     }
 
     private func layoutFilmsTableView() {
@@ -39,6 +44,13 @@ final class ListFilmsView: UIViewController {
         filmsTableView.backgroundColor = UIColor(hex: "#EFEFEF")
         filmsTableView.register(FilmInfoCell.self, forCellReuseIdentifier: "FilmInfoCell")
     }
+
+    private func setupNavigationController() {
+        navigationController?.navigationBar.setCustomAppearance(title: "My Movie List", titleColor: .black, backgroundColor: UIColor(hex: "#EFEFEF") ?? .lightGray)
+        navigationController?.navigationBar.addPlusButton(target: self, action: #selector(addButtonTapped))
+    }
+
+    @objc private func addButtonTapped() {}
 }
 
 // MARK: - extension
