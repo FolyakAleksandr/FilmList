@@ -18,6 +18,8 @@
 		017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44632C50F0AC00679150 /* UIColor + hex.swift */; };
 		017D44662C50F2AC00679150 /* ListFilmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44652C50F2AC00679150 /* ListFilmsViewModel.swift */; };
 		017D44682C50F7C100679150 /* UINavigationBar + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44672C50F7C100679150 /* UINavigationBar + UI.swift */; };
+		017D446B2C51020700679150 /* AddFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D446A2C51020700679150 /* AddFilmView.swift */; };
+		017D446D2C51075100679150 /* AddFilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D446C2C51075100679150 /* AddFilmViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		017D44632C50F0AC00679150 /* UIColor + hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + hex.swift"; sourceTree = "<group>"; };
 		017D44652C50F2AC00679150 /* ListFilmsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmsViewModel.swift; sourceTree = "<group>"; };
 		017D44672C50F7C100679150 /* UINavigationBar + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + UI.swift"; sourceTree = "<group>"; };
+		017D446A2C51020700679150 /* AddFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFilmView.swift; sourceTree = "<group>"; };
+		017D446C2C51075100679150 /* AddFilmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFilmViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		0174C2B32C50A78700BA73E6 /* FilmList */ = {
 			isa = PBXGroup;
 			children = (
+				017D44692C5101EB00679150 /* Add */,
 				0174C2CB2C50A7D400BA73E6 /* App */,
 				017D44602C50C5F600679150 /* Extensions */,
 				017D44592C50B47100679150 /* Main */,
@@ -112,6 +117,15 @@
 				017D44672C50F7C100679150 /* UINavigationBar + UI.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		017D44692C5101EB00679150 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				017D446A2C51020700679150 /* AddFilmView.swift */,
+				017D446C2C51075100679150 /* AddFilmViewModel.swift */,
+			);
+			path = Add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +201,11 @@
 				017D445B2C50B48B00679150 /* ListFilmsView.swift in Sources */,
 				0174C2BF2C50A78700BA73E6 /* FilmList.xcdatamodeld in Sources */,
 				017D44682C50F7C100679150 /* UINavigationBar + UI.swift in Sources */,
+				017D446D2C51075100679150 /* AddFilmViewModel.swift in Sources */,
 				0174C2B52C50A78700BA73E6 /* AppDelegate.swift in Sources */,
 				0174C2B72C50A78700BA73E6 /* SceneDelegate.swift in Sources */,
 				017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */,
+				017D446B2C51020700679150 /* AddFilmView.swift in Sources */,
 				017D44622C50C61000679150 /* UIView + UI.swift in Sources */,
 				017D44662C50F2AC00679150 /* ListFilmsViewModel.swift in Sources */,
 				017D445F2C50B98B00679150 /* FilmInfoCell.swift in Sources */,

@@ -15,6 +15,7 @@ final class ListFilmsView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: "#EFEFEF")
         setupUI()
+        configureBindings()
     }
 
     // MARK: - setup UI
@@ -50,7 +51,19 @@ final class ListFilmsView: UIViewController {
         navigationController?.navigationBar.addPlusButton(target: self, action: #selector(addButtonTapped))
     }
 
-    @objc private func addButtonTapped() {}
+    @objc private func addButtonTapped() {
+        viewModel?.buttonTaped()
+    }
+
+    private func configureBindings() {
+        viewModel?.navigateToAddFilmView = { [weak self] in
+            guard let self else { return }
+            let view = AddFilmView()
+            let viewModel = DefaultAddFilmViewModel()
+            view.viewModel = viewModel
+            navigationController?.pushViewController(view, animated: true)
+        }
+    }
 }
 
 // MARK: - extension
