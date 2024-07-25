@@ -15,7 +15,6 @@ final class ListFilmsView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: "#EFEFEF")
         setupUI()
-        configureBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,16 +68,6 @@ final class ListFilmsView: UIViewController {
 
     @objc private func addButtonTapped() {
         viewModel?.buttonTaped()
-    }
-
-    private func configureBindings() {
-        viewModel?.navigateToAddFilmView = { [weak self] in
-            guard let self else { return }
-            let view = AddFilmView()
-            let viewModel = DefaultAddFilmViewModel()
-            view.viewModel = viewModel
-            navigationController?.pushViewController(view, animated: true)
-        }
     }
 }
 

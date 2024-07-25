@@ -10,7 +10,6 @@ final class AddFilmView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        configureBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,12 +39,5 @@ final class AddFilmView: UIViewController {
 
     @objc func saveButtonTapped() {
         viewModel?.saveButtonTapped()
-    }
-
-    private func configureBindings() {
-        viewModel?.navigationToListFilmView = { [weak self] in
-            guard let self else { return }
-            navigationController?.popToRootViewController(animated: true)
-        }
     }
 }
