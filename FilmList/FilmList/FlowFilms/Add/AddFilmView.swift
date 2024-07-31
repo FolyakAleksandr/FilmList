@@ -4,6 +4,7 @@ final class AddFilmView: UIViewController {
     // MARK: - variable
 
     var viewModel: AddFilmViewModel?
+    var counter = 0
 
     // MARK: - private properties
 
@@ -52,6 +53,9 @@ final class AddFilmView: UIViewController {
         
         layoutDescriptionTextView()
         setupDescriptionTextView()
+
+        setupNotificationCenter()
+        closeKeyboard()
     }
 
     private func configureNavigationBar() {
@@ -148,7 +152,7 @@ final class AddFilmView: UIViewController {
             descriptionTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
         ])
     }
-    
+
     private func setupDescriptionTextView() {
         descriptionTextView.textColor = .black
         descriptionTextView.font = .systemFont(ofSize: 16, weight: .light)
@@ -158,10 +162,55 @@ final class AddFilmView: UIViewController {
         descriptionTextView.layer.shadowOffset = CGSize(width: 0, height: 0)
         descriptionTextView.layer.cornerRadius = 8
         descriptionTextView.clipsToBounds = false
+        descriptionTextView.delegate = self
+        descriptionTextView.returnKeyType = .default
+    }
+
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(scrollViewWithShowKeyboard),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(scrollViewWithHideKeyboard),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
+
+    private func closeKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tappedView))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc private func scrollViewWithShowKeyboard(notification: Notification) {
+        counter += 1
+        guard let frameKeyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let heightKeyboard = frameKeyboard.cgRectValue.height
+        if counter == 1 {
+            view.frame.origin.y -= heightKeyboard
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func scrollViewWithHideKeyboard() {
+        view.frame.origin.y = 0
+        view.layoutIfNeeded()
+        counter = 0
+    }
+
+    @objc private func tappedView() {
+        view.endEditing(true)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
-// MARK: - extension
+// MARK: - extension CollectionView
 
 extension AddFilmView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -179,5 +228,17 @@ extension AddFilmView: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
         let height = width / 1.7
 
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - extension TextView
+
+extension AddFilmView: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            descriptionTextView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
