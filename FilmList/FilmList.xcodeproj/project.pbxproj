@@ -22,6 +22,8 @@
 		017D44622C50C61000679150 /* UIView + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44612C50C61000679150 /* UIView + UI.swift */; };
 		017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44632C50F0AC00679150 /* UIColor + hex.swift */; };
 		017D44682C50F7C100679150 /* UINavigationBar + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D44672C50F7C100679150 /* UINavigationBar + UI.swift */; };
+		01BC96F52C5CA42100C3567E /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC96F42C5CA42100C3567E /* ChangeNameView.swift */; };
+		01BC96F72C5CAF8900C3567E /* ChangedNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC96F62C5CAF8800C3567E /* ChangedNameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		017D44612C50C61000679150 /* UIView + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + UI.swift"; sourceTree = "<group>"; };
 		017D44632C50F0AC00679150 /* UIColor + hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + hex.swift"; sourceTree = "<group>"; };
 		017D44672C50F7C100679150 /* UINavigationBar + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + UI.swift"; sourceTree = "<group>"; };
+		01BC96F42C5CA42100C3567E /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		01BC96F62C5CAF8800C3567E /* ChangedNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangedNameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		013000D02C5230640056BBB7 /* FlowFilms */ = {
 			isa = PBXGroup;
 			children = (
+				01BC96F22C5CA3FD00C3567E /* ChangeScreens */,
 				013000CA2C5230640056BBB7 /* Add */,
 				013000CE2C5230640056BBB7 /* Main */,
 				013000CF2C5230640056BBB7 /* Coordinator.swift */,
@@ -141,6 +146,23 @@
 				017D44672C50F7C100679150 /* UINavigationBar + UI.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01BC96F22C5CA3FD00C3567E /* ChangeScreens */ = {
+			isa = PBXGroup;
+			children = (
+				01BC96F32C5CA40A00C3567E /* ChangeName */,
+			);
+			path = ChangeScreens;
+			sourceTree = "<group>";
+		};
+		01BC96F32C5CA40A00C3567E /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				01BC96F42C5CA42100C3567E /* ChangeNameView.swift */,
+				01BC96F62C5CAF8800C3567E /* ChangedNameViewModel.swift */,
+			);
+			path = ChangeName;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +243,9 @@
 				013000D52C5230640056BBB7 /* ListFilmsViewModel.swift in Sources */,
 				013000D12C5230640056BBB7 /* AddFilmView.swift in Sources */,
 				013000D22C5230640056BBB7 /* AddFilmViewModel.swift in Sources */,
+				01BC96F72C5CAF8900C3567E /* ChangedNameViewModel.swift in Sources */,
 				0174C2B52C50A78700BA73E6 /* AppDelegate.swift in Sources */,
+				01BC96F52C5CA42100C3567E /* ChangeNameView.swift in Sources */,
 				013000D62C5230640056BBB7 /* Coordinator.swift in Sources */,
 				0174C2B72C50A78700BA73E6 /* SceneDelegate.swift in Sources */,
 				017D44642C50F0AC00679150 /* UIColor + hex.swift in Sources */,
